@@ -1,0 +1,102 @@
+# Schema
+-> Computer 
+-> Miniconda + Conda 
+-> Pustaka Python (matplotlib, pandas, scikit-learn, etc)
+
+# Structure
+___ Project folder
+|_____ Data
+|_____ Env
+    |__ Pandas
+    |__ NumPy
+    |__ Jupyter
+    |__ etc. 
+
+# Step
+1. Download miniconda
+    -   https://repo.anaconda.com/miniconda/
+
+2. Instal it to your Computer
+    -   open 'Anaconda prompt'
+
+
+3. Test the installation via terminal
+    -   conda --version
+    -   conda info
+    -   if conda undefined, add miniconda to the PATH or re-installing
+        {   
+            Command Prompt
+            1. Search "Environment Variables" 
+                => Win + R, type 'sysdm.cpl', Enter
+                => Tab advanced > Click Environment Variables
+            2. Edit "Path" on user Variables, New
+                =>  C:\Users\ACHMAD\miniconda3
+                    C:\Users\ACHMAD\miniconda3\Scripts
+                    C:\Users\ACHMAD\miniconda3\Library\bin
+            3. Save and restart
+
+            Bash/Terminal
+            1. nano ~/.bashrc
+            2. export PATH="/c/Users/ACHMAD/miniconda3/bin:$PATH"
+            3. Save and load
+                source ~/.bashrc   # Jika menggunakan Bash
+
+        }
+
+4. Create a project folder and change into it
+    -   use 'dir' and 'cd' command
+
+5. Create a custom environment within the project folder
+    -   use 
+    
+        {
+        conda create --prefix ./env [python library]
+        conda create --prefix ./env pandas numpy matplotlib scikit-learn
+    
+            [
+                conda => 
+                create new conda environment
+                
+                --prefix ./env => 
+                specify PATH directory explicity, then conda env. will be create at 'env folder' to current directory
+
+                pandas numpy matplotlib scikit-learn => 
+                pandas libraries that will be installed inside the env folder
+            ]
+    
+        }
+
+6. Activate your new environment (conda activate)
+    -   Activate your datascience env.
+        {
+            conda activate PATH\env
+        }
+    -   List existing conda environment
+        {
+            conda env list
+        }
+    -   Deactivate your datascience env.
+        {
+            conda deactivate
+        }
+
+7. Install Jupyter (conda install jupyter)
+    -   Use this command after your env has been activated, or you can run this when create a custom env
+        {
+            conda install jupyter
+        }
+
+
+8. Load up a Jupyter Notebook and check the tools you need
+    -   Load jupyter notebook
+        {
+            jupyter notebook
+        }
+    -   use 'CTRL + C' shutting down Jupyter notebook
+
+9. Tip to save conda env to GIT
+    -   env folder is to big, good practice to save just 'environment.yml' file
+    -   add env folder to .gitignore
+        echo "env/" >> .gitignore
+        git add .gitignore
+        git commit -m "Ignore environment folder"
