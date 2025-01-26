@@ -96,6 +96,14 @@ ___ Project folder
 
 9. Tip to save conda env to GIT
     -   env folder is to big, good practice to save just 'environment.yml' file
+        {
+            conda env export > environment.yml
+
+            init:
+            conda env create -f environment.yml
+            conda activate my_env
+        }
+
     -   add env folder to .gitignore
         echo "env/" >> .gitignore
         git add .gitignore
