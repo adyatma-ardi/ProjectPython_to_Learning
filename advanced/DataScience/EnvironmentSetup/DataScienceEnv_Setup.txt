@@ -70,6 +70,7 @@ ___ Project folder
     -   Activate your datascience env.
         {
             conda activate PATH\env
+            conda activate F:\MYCODE\myCode\vsc_repo\ProjectPython_to_Learning\env
         }
     -   List existing conda environment
         {
